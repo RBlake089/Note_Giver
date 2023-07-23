@@ -33,6 +33,17 @@ app.get('/notes', (req, res) => {
         res.json(dbData)
     });   
 });
+app.post('/api/notes', (req, res) => {
+    const dbData = JSON.parse(fs.readFileSync('./db/db.json','utf8'));
+    const newNotes = {
+      title: req.body.title,
+      text: req.body.text,
+      id: uuidv4(),
+    };
+    dbData.push(newNotes);
+    fs.writeFileSync('./db/db.json',JSON.stringify(dbData));
+    res.json(dbData);
+  });
   
   
   app.listen(PORT, () =>
