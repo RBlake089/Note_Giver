@@ -45,3 +45,4 @@ If you have any questions, please feel free to contact me:
 
 - GitHub: [rblake089@github.com](https://github.com/rblake089@github.com)
 - Email: lilrsb@yahoo.com
+![note](https://github.com/RBlake089/Note_Giver/assets/125151063/7f1a3c7d-6bff-4673-9dc0-6d4605a501f6)
