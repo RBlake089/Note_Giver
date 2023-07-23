@@ -44,6 +44,16 @@ app.post('/api/notes', (req, res) => {
     fs.writeFileSync('./db/db.json',JSON.stringify(dbData));
     res.json(dbData);
   });
+
+  app.delete('/api/notes/:id', (req, res) => {
+    let data = fs.readFileSync('./db/db.json','utf8');
+    let dbData = JSON.parse(data);
+    const newNotes = dbData.filter((note) => { 
+      return note.id !== req.params.id;
+    });
+    fs.writeFileSync('./db/db.json',JSON.stringify(newNotes));
+    res.json("Note deleted.");
+  });
   
   
   app.listen(PORT, () =>
